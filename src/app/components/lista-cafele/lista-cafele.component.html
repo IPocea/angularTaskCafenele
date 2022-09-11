@@ -1,0 +1,32 @@
+<section>
+  <h4>Num&#259;r total de cafele afi&#351;ate: {{listaCafeleFiltrata.length}}
+  </h4>
+  <mat-form-field appearance="outline">
+    <mat-label>Caut&#259; cafea</mat-label>
+    <input id="input-cautare" matInput type="text">
+    <button [ngClass]="valoareInputCautare? 'visible': 'hidden'" matSuffix
+      mat-icon-button aria-label="Clear" (click)="stergeValoareaInputului()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <section class="cafele-container">
+    <ng-container *ngIf="listaCafeleFiltrata.length; else nuAmGasit">
+      <article *ngFor="let cafea of listaCafeleFiltrata" class="cafea">
+        <div>
+          <h4>{{cafea.denumire}}</h4>
+          <p>Id cafea: {{cafea.id}}</p>
+          <p>{{cafea.descriere}}</p>
+        </div>
+        <p>Pre&#539;: {{cafea.pret.toFixed(2)}} RON</p>
+      </article>
+    </ng-container>
+  </section>
+</section>
+
+<ng-template #nuAmGasit>
+  <article class="nu-am-gasit">
+    <h4>Ne pare r&#259;u, ins&#259; nu am identificat niciun articol dupa
+      aceast&#259; c&#259;utare.
+    </h4>
+  </article>
+</ng-template>

@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+:host {
+  section {
+    padding: 5px 0;
+    display: flex;
+    gap: $gapPrincipal;
+    article {
+      width: 100px;
+      height: auto;
+      img {
+        width: 100px;
+        height: auto;
+        border-radius: $borderRadius;
+        cursor: pointer;
+      }
+    }
+    h3 {
+      padding: 5px 0;
+      color: $culoareaSpreGrena;
+    }
+  }
+}

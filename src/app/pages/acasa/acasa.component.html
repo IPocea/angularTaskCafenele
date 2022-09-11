@@ -1,0 +1,62 @@
+<section>
+  <ng-container *ngIf="!seIncarca; else loading">
+    <h2>Bine ai revenit drag&#259; User!</h2>
+    <ng-container *ngIf="listaJudete.length">
+      <h4>La CofeeShop te asteapt&#259; o gama larg&#259; de cafele &#351;i
+        cafenele.
+      </h4>
+      <p>In partea st&#226;nga vei g&#259;si {{listaJudete.length}} Jude&#539;e,
+        {{listaLocalitati.length}} Localit&#259;ti &#351;i
+        {{listaCafenele.length}}
+        Cafenele.
+      </p>
+      <p>O zi frumoas&#259; s&#259; ai!</p>
+    </ng-container>
+    <section class="citate-celebre">
+      <blockquote>
+        <q>Almost all my middle-aged and elderly acquaintances, including me,
+          feel
+          about 25, unless we haven't had our coffee, in which case we feel
+          107.</q>
+        <cite>Martha Beck</cite>
+      </blockquote>
+      <blockquote>
+        <q>Three hundred years ago, during the Age of Enlightenment, the coffee
+          house became the center of innovation.</q>
+        <cite>Peter Diamonde</cite>
+      </blockquote>
+      <blockquote>
+        <q>Up to a thousand milligrams of caffeine is considered safe for most
+          people, which translates into about 10 cups of coffee a day.</q>
+        <cite>Michael Greger</cite>
+      </blockquote>
+    </section>
+    <section class="poze-container">
+      <figure>
+        <img src="assets/cofee-shop-cafea-1.jpg" alt="Cafea proaspat facuta">
+        <figcaption>Cafeaua de diminea&#539;&#259;</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/cofee-shop-cafea-2.jpg"
+          alt="Cafea proaspat facuta pe un pat de boabe de cafea prajita">
+        <figcaption>Serveste o cafea proaspat&#259;</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/cofee-shop-cafea-3.jpg"
+          alt="Cafea cu inimioara si trandafir langa">
+        <figcaption>Ofer&#259;-i o cafea din inim&#259;</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/cofee-shop-cafea-4.jpg"
+          alt="Cafea si Ibric ca odinioara">
+        <figcaption>Cafea ca odinioar&#259;</figcaption>
+      </figure>
+    </section>
+  </ng-container>
+</section>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

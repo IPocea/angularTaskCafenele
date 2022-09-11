@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+
+:host {
+  section {
+    position: relative;
+    height: 90%;
+    padding: $paddingPrincipal;
+    .citate-celebre {
+      display: flex;
+      justify-content: center;
+      height: auto;
+      margin-top: 10px;
+      blockquote {
+        display: flex;
+        flex-direction: column;
+        cite {
+          align-self: flex-end;
+        }
+      }
+    }
+    .poze-container {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      figure {
+        width: 250px;
+        border-radius: $borderRadius;
+        img {
+          width: 250px;
+          height: 200px;
+          border-radius: $borderRadius;
+        }
+        figcaption {
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

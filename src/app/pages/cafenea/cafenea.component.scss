@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+:host {
+  height: 100%;
+  section {
+    height: 90%;
+    padding: $paddingPrincipal;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $gapPrincipal;
+    h2,
+    h3 {
+      margin: 0;
+    }
+    .cafele-eroare-container {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      figure {
+        max-width: 600px;
+        height: auto;
+        img {
+          max-width: 600px;
+          height: auto;
+          border: 1px solid $culoareaPrimara;
+          border-radius: $borderRadius;
+          margin-bottom: 5px;
+        }
+        figcaption {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

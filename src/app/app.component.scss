@@ -1,0 +1,43 @@
+@import "./styles/variables.scss";
+
+:host {
+  main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    section,
+    aside {
+      height: 100%;
+    }
+    aside {
+      background-color: $culoareaPrimara;
+      color: $culoareaNuantaDeAlb;
+      width: 25%;
+      overflow: auto;
+    }
+    section:last-child {
+      width: 75%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: "header" "pagini" "footer";
+      border-left: 5px solid $culoareaPrimara;
+      header {
+        grid-area: header;
+        background-color: $culoareaPrimara;
+        color: $culoareaNuantaDeAlb;
+      }
+      .pagini {
+        grid-area: pagini;
+        background-color: $culoareaSecundara;
+        color: $culoareaPrimara;
+        border-right: 5px solid $culoareaPrimara;
+        overflow: auto;
+      }
+      footer {
+        grid-area: footer;
+        background-color: $culoareaPrimara;
+        color: $culoareaSpreGrena;
+      }
+    }
+  }
+}

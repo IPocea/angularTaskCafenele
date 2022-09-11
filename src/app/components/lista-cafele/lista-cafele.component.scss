@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+
+:host {
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: $gapPrincipal;
+    margin-bottom: $gapPrincipal;
+    h4 {
+      margin: 0;
+    }
+    mat-form-field {
+      width: 300px;
+      align-self: center;
+      mat-label {
+        color: $culoareaPrimara;
+      }
+      button {
+        cursor: pointer;
+        background-color: $culoareaSecundara;
+        border: none;
+        border-radius: 50%;
+        padding: 5px;
+      }
+      button:active {
+        background-color: $culoareaAlba;
+      }
+    }
+    .cafele-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 5px;
+      .cafea {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+        border: 1px solid $culoareaPrimara;
+        border-radius: $borderRadius;
+        padding: $paddingPrincipal;
+        width: 28%;
+        box-shadow: 2px 2px 1px $culoareaSpreGrena;
+        div {
+          h4,
+          p {
+            margin: 0;
+            padding: 0;
+          }
+          h4 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: $culoareaSpreGrena;
+          }
+          p:nth-child(2) {
+            margin-bottom: $gapPrincipal;
+            text-align: center;
+          }
+        }
+      }
+      .cafea:hover {
+        box-shadow: 0 0 0;
+      }
+      article.nu-am-gasit {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+}
+::ng-deep mat-form-field.mat-form-field-appearance-outline {
+  .mat-form-field-wrapper {
+    padding: 0;
+
+    .mat-form-field-outline {
+      color: $culoareaPrimara;
+    }
+
+    mat-label {
+      color: $culoareaPrimara;
+    }
+
+    input.mat-input-element {
+      caret-color: $culoareaPrimara;
+    }
+  }
+}

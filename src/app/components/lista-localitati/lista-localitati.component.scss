@@ -1,0 +1,55 @@
+@import "../../styles/variables.scss";
+
+:host {
+  section {
+    padding: $paddingPrincipal;
+    h3 {
+      color: $culoareaSpreGrena;
+    }
+    ul.judet {
+      padding: 0;
+      text-transform: capitalize;
+      li {
+        list-style-type: none;
+        p {
+          margin: 5px 0;
+          display: flex;
+          align-items: center;
+          mat-icon,
+          span {
+            cursor: pointer;
+          }
+          span.dezactivat {
+            cursor: not-allowed;
+          }
+        }
+        ul {
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+  }
+}
+.sageata {
+  padding: 2px;
+  transition: all 0.5s;
+}
+
+.sageata-activa {
+  transition: all 0.5s;
+  transform: rotate(90deg);
+}
+.continut-strans {
+  display: none;
+}
+.continut-afisat {
+  display: block;
+}
+.cafenea {
+  color: $culoareaSpreGrena;
+  border-bottom: 1px solid $culoareaPrimara;
+}
+.cafenea:hover,
+.cafenea-activa {
+  border-bottom: 1px solid $culoareaSpreGrena;
+}

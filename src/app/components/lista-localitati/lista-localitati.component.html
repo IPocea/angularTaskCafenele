@@ -1,0 +1,270 @@
+<section>
+  <h3>Lista localita&#355;i &#x15F;i cafenele:</h3>
+  <ng-container *ngIf="!seIncarca; else loading">
+    <ul class="judet" *ngFor="let judet of listaJudete">
+      <li>
+        <p>
+          <mat-icon (click)="arataLocalitate($event)" [ngClass]="
+              listaIdParinteAdancime2.indexOf(judet.id) !== -1
+                ? 'sageata'
+                : 'sageata hidden'
+            ">keyboard_arrow_right</mat-icon><span
+            (click)="arataLocalitate($event)">{{ judet.denumire }}</span>
+        </p>
+        <ng-container *ngFor="let localitate2 of listaLocalitatiAdancime2">
+          <ul *ngIf="localitate2.idParinte === judet.id"
+            class="continut-strans">
+            <li>
+              <p>
+                <mat-icon (click)="arataLocalitate($event)" [ngClass]="
+                    listaIdParinteAdancime3.indexOf(localitate2.id) === -1 &&
+                    listaIdParinteCafenele.indexOf(localitate2.id) === -1
+                      ? 'sageata hidden'
+                      : 'sageata'
+                  ">keyboard_arrow_right</mat-icon><span [ngClass]="
+                    listaIdParinteAdancime3.indexOf(localitate2.id) === -1 &&
+                    listaIdParinteCafenele.indexOf(localitate2.id) === -1
+                      ? 'dezactivat'
+                      : ''
+                  " (click)="arataLocalitate($event)">{{ localitate2.denumire
+                  }}</span>
+              </p>
+              <ng-container
+                *ngIf="listaIdParinteCafenele.indexOf(localitate2.id) !== -1">
+                <ng-container *ngFor="let cafenea2 of listaCafenele">
+                  <ul class="continut-strans"
+                    *ngIf="cafenea2.idParinte === localitate2.id">
+                    <li>
+                      <p>
+                        <mat-icon class="hidden">keyboard_arrow_right</mat-icon>
+                        <span
+                          [ngClass]="classNumber === cafenea2.id? 'cafenea cafenea-activa' : 'cafenea'"
+                          (click)="duteLaCafenea(cafenea2)">{{ cafenea2.denumire
+                          }}</span>
+                      </p>
+                    </li>
+                  </ul>
+                </ng-container>
+              </ng-container>
+              <ng-container
+                *ngFor="let localitate3 of listaLocalitatiAdancime3">
+                <ul *ngIf="localitate3.idParinte === localitate2.id"
+                  class="continut-strans">
+                  <li>
+                    <p>
+                      <mat-icon (click)="arataLocalitate($event)" [ngClass]="
+                          listaIdParinteAdancime4.indexOf(localitate3.id) ===
+                            -1 &&
+                          listaIdParinteCafenele.indexOf(localitate3.id) === -1
+                            ? 'sageata hidden'
+                            : 'sageata'
+                        ">keyboard_arrow_right</mat-icon><span [ngClass]="
+                          listaIdParinteAdancime4.indexOf(localitate3.id) ===
+                            -1 &&
+                          listaIdParinteCafenele.indexOf(localitate3.id) === -1
+                            ? 'dezactivat'
+                            : ''
+                        " (click)="arataLocalitate($event)">{{
+                        localitate3.denumire }}</span>
+                    </p>
+                    <ng-container *ngIf="
+                        listaIdParinteCafenele.indexOf(localitate3.id) !== -1
+                      ">
+                      <ng-container *ngFor="let cafenea3 of listaCafenele">
+                        <ul class="continut-strans"
+                          *ngIf="cafenea3.idParinte === localitate3.id">
+                          <li>
+                            <p>
+                              <mat-icon class="hidden">keyboard_arrow_right
+                              </mat-icon>
+                              <span
+                                [ngClass]="classNumber === cafenea3.id? 'cafenea cafenea-activa' : 'cafenea'"
+                                (click)="duteLaCafenea(cafenea3)">{{
+                                cafenea3.denumire }}</span>
+                            </p>
+                          </li>
+                        </ul>
+                      </ng-container>
+                    </ng-container>
+                    <ng-container
+                      *ngFor="let localitate4 of listaLocalitatiAdancime4">
+                      <ul *ngIf="localitate4.idParinte === localitate3.id"
+                        class="continut-strans">
+                        <li>
+                          <p>
+                            <mat-icon (click)="arataLocalitate($event)"
+                              [ngClass]="
+                                listaIdParinteAdancime5.indexOf(
+                                  localitate4.id
+                                ) === -1 &&
+                                listaIdParinteCafenele.indexOf(
+                                  localitate4.id
+                                ) === -1
+                                  ? 'sageata hidden'
+                                  : 'sageata'
+                              ">keyboard_arrow_right</mat-icon><span [ngClass]="
+                                listaIdParinteAdancime5.indexOf(
+                                  localitate4.id
+                                ) === -1 &&
+                                listaIdParinteCafenele.indexOf(
+                                  localitate4.id
+                                ) === -1
+                                  ? 'dezactivat'
+                                  : ''
+                              " (click)="arataLocalitate($event)">{{
+                              localitate4.denumire }}</span>
+                          </p>
+                          <ng-container *ngIf="
+                              listaIdParinteCafenele.indexOf(localitate4.id) !==
+                              -1
+                            ">
+                            <ng-container
+                              *ngFor="let cafenea4 of listaCafenele">
+                              <ul class="continut-strans"
+                                *ngIf="cafenea4.idParinte === localitate4.id">
+                                <li>
+                                  <p>
+                                    <mat-icon class="hidden">
+                                      keyboard_arrow_right</mat-icon>
+                                    <span
+                                      [ngClass]="classNumber === cafenea4.id? 'cafenea cafenea-activa' : 'cafenea'"
+                                      (click)="duteLaCafenea(cafenea4)">{{
+                                      cafenea4.denumire }}</span>
+                                  </p>
+                                </li>
+                              </ul>
+                            </ng-container>
+                          </ng-container>
+                          <ng-container
+                            *ngFor="let localitate5 of listaLocalitatiAdancime5">
+                            <ul *ngIf="localitate5.idParinte === localitate4.id"
+                              class="continut-strans">
+                              <li>
+                                <p>
+                                  <mat-icon (click)="arataLocalitate($event)"
+                                    [ngClass]="
+                                      listaIdParinteAdancime6.indexOf(
+                                        localitate5.id
+                                      ) === -1 &&
+                                      listaIdParinteCafenele.indexOf(
+                                        localitate5.id
+                                      ) === -1
+                                        ? 'sageata hidden'
+                                        : 'sageata'
+                                    ">keyboard_arrow_right</mat-icon><span
+                                    (click)="arataLocalitate($event)" [ngClass]="
+                                      listaIdParinteAdancime6.indexOf(
+                                        localitate5.id
+                                      ) === -1 &&
+                                      listaIdParinteCafenele.indexOf(
+                                        localitate5.id
+                                      ) === -1
+                                        ? 'dezactivat'
+                                        : ''
+                                    ">{{ localitate5.denumire }}</span>
+                                </p>
+                                <ng-container *ngIf="
+                                    listaIdParinteCafenele.indexOf(
+                                      localitate5.id
+                                    ) !== -1
+                                  ">
+                                  <ng-container
+                                    *ngFor="let cafenea5 of listaCafenele">
+                                    <ul class="continut-strans" *ngIf="
+                                        cafenea5.idParinte === localitate5.id
+                                      ">
+                                      <li>
+                                        <p>
+                                          <mat-icon class="hidden">
+                                            keyboard_arrow_right</mat-icon>
+                                          <span
+                                            [ngClass]="classNumber === cafenea5.id? 'cafenea cafenea-activa' : 'cafenea'"
+                                            (click)="duteLaCafenea(cafenea5)">{{
+                                            cafenea5.denumire }}</span>
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </ng-container>
+                                </ng-container>
+                                <ng-container *ngFor="
+                                    let localitate6 of listaLocalitatiAdancime6
+                                  ">
+                                  <ul *ngIf="
+                                      localitate6.idParinte === localitate5.id
+                                    " class="continut-strans">
+                                    <li>
+                                      <p>
+                                        <mat-icon
+                                          (click)="arataLocalitate($event)"
+                                          [ngClass]="
+                                            listaIdParinteCafenele.indexOf(
+                                              localitate6.id
+                                            ) === -1 &&
+                                            listaIdParinteCafenele.indexOf(
+                                              localitate6.id
+                                            ) === -1
+                                              ? 'sageata hidden'
+                                              : 'sageata'
+                                          ">keyboard_arrow_right</mat-icon>
+                                        <span (click)="arataLocalitate($event)"
+                                          [ngClass]="
+                                            listaIdParinteCafenele.indexOf(
+                                              localitate6.id
+                                            ) === -1 &&
+                                            listaIdParinteCafenele.indexOf(
+                                              localitate6.id
+                                            ) === -1
+                                              ? 'dezactivat'
+                                              : ''
+                                          ">{{ localitate6.denumire }}</span>
+                                      </p>
+                                      <ng-container *ngIf="
+                                          listaIdParinteCafenele.indexOf(
+                                            localitate6.id
+                                          ) !== -1
+                                        ">
+                                        <ng-container
+                                          *ngFor="let cafenea6 of listaCafenele">
+                                          <ul class="continut-strans" *ngIf="
+                                              cafenea6.idParinte ===
+                                              localitate6.id
+                                            ">
+                                            <li>
+                                              <p>
+                                                <mat-icon class="hidden">
+                                                  keyboard_arrow_right
+                                                </mat-icon>
+                                                <span
+                                                  [ngClass]="classNumber === cafenea6.id? 'cafenea cafenea-activa' : 'cafenea'"
+                                                  (click)="
+                                                    duteLaCafenea(cafenea6)
+                                                  ">{{
+                                                  cafenea6.denumire }}</span>
+                                              </p>
+                                            </li>
+                                          </ul>
+                                        </ng-container>
+                                      </ng-container>
+                                    </li>
+                                  </ul>
+                                </ng-container>
+                              </li>
+                            </ul>
+                          </ng-container>
+                        </li>
+                      </ul>
+                    </ng-container>
+                  </li>
+                </ul>
+              </ng-container>
+            </li>
+          </ul>
+        </ng-container>
+      </li>
+    </ul>
+  </ng-container>
+</section>
+
+<ng-template #loading>
+  <p>Listele sunt in curs de incarcare...</p>
+</ng-template>

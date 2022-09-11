@@ -1,0 +1,28 @@
+<section>
+  <ng-container *ngIf="!seIncarca; else loading">
+    <h2>{{cafenea.denumire}}</h2>
+    <ng-container *ngIf="listaCafele.length; else error">
+      <h3>Num&#259;r total de cafele disponibile: {{listaCafele.length}}</h3>
+      <app-lista-cafele [listaCafele]="listaCafele"></app-lista-cafele>
+    </ng-container>
+  </ng-container>
+</section>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #error>
+  <h3>Ne pare r&#259;u ins&#259; momentan cafelele nu sunt disponibile. V&#259;
+    rugam sa
+    incercati mai tarziu.</h3>
+  <div class="cafele-eroare-container">
+    <figure>
+      <img src="assets/Latte_si_cafea-neagra.jpg"
+        alt="CofeeShop latte si cafea neagra pe o masa de lemn">
+      <figcaption>Tu ai b&#259;ut cafeaua pe ziua de azi?</figcaption>
+    </figure>
+  </div>
+</ng-template>
