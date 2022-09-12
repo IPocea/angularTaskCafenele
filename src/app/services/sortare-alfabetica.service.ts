@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { ICafeneaSauLocalitate } from '../interfaces';
+import { ICafeneaSauLocalitate, IProdusDisponibil } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SortareAlfabeticaService {
   constructor() {}
-  sortByDenumire(lista: ICafeneaSauLocalitate[]): void {
+  sortByDenumire(lista: ICafeneaSauLocalitate[] | IProdusDisponibil[]): void {
     lista.sort((a, b) =>
-      a.denumire.charAt(0) > b.denumire.charAt(0)
+      a.denumire.toUpperCase() > b.denumire.toUpperCase()
         ? 1
-        : a.denumire.charAt(0) < b.denumire.charAt(0)
+        : a.denumire.toUpperCase() < b.denumire.toUpperCase()
         ? -1
         : 0
     );

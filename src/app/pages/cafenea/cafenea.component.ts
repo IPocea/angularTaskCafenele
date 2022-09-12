@@ -5,6 +5,7 @@ import { PseudoApiService } from 'src/app/services/pseudo-api.service';
 import { take } from 'rxjs';
 import { ICafeneaSauLocalitate, IProdusDisponibil } from 'src/app/interfaces';
 import { Subscription } from 'rxjs';
+import { SortareAlfabeticaService } from 'src/app/services/sortare-alfabetica.service';
 
 @Component({
   selector: 'app-cafenea',
@@ -21,7 +22,8 @@ export class CafeneaComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private setClassNumber: SetClassNumberService,
     private api: PseudoApiService,
-    private router: Router
+    private router: Router,
+    private sortareService: SortareAlfabeticaService
   ) {}
 
   ngOnInit(): void {
@@ -65,6 +67,7 @@ export class CafeneaComponent implements OnInit, OnDestroy {
       .subscribe(
         (cafele) => {
           this.listaCafele = cafele;
+          this.sortareService.sortByDenumire(this.listaCafele);
           this.seIncarca = false;
         },
         (err) => {
