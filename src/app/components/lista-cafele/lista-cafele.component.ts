@@ -34,7 +34,7 @@ export class ListaCafeleComponent implements OnInit, AfterViewInit, OnDestroy {
     this.cautareSubscribtie = keyup$
       .pipe(
         map((i: any) => i.currentTarget.value),
-        debounceTime(500)
+        debounceTime(250)
       )
       .subscribe((value) => {
         this.valoareInputCautare = value;
