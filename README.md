@@ -5,8 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## About
 
 An angular task where we have a mini cofee app, split in 2:
- - left side with a tree view
- - right side with cofee shops
+ - left side of screen is a tree view with counties, cities, towns
+ - right side will display the cofee shops from the localities from the tree side
 
 ## Development server
 
